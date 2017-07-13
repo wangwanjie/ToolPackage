@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,29 +15,32 @@
         <scene sceneID="Vz2-PY-dv6">
             <objects>
                 <tableViewController id="leH-of-5Oh" customClass="NewsTableViewController" customModule="ToolPackage" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOL-NO-aom">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="WOL-NO-aom">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="Rk8-vp-MaH" customClass="NewsTableViewCell" customModule="ToolPackage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rk8-vp-MaH" id="oQh-fZ-WPn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-BX-fMY">
-                                            <rect key="frame" x="2" y="2" width="112.5" height="39.5"/>
+                                            <rect key="frame" x="2" y="2" width="104.5" height="65.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="1xb-BX-fMY" secondAttribute="height" multiplier="99:62" id="YUj-Bm-1ad"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRx-qI-x4H" userLabel="title">
-                                            <rect key="frame" x="114.5" y="0.0" width="260.5" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRx-qI-x4H" userLabel="title">
+                                            <rect key="frame" x="106.5" y="0.0" width="268.5" height="41.5"/>
                                             <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="18"/>
                                             <color key="textColor" red="0.29239371829999999" green="0.075018860800000003" blue="0.1099680529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzO-Kk-IkL" userLabel="source">
-                                            <rect key="frame" x="114.5" y="26" width="260.5" height="17.5"/>
+                                            <rect key="frame" x="106.5" y="41.5" width="268.5" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -52,7 +56,6 @@
                                         <constraint firstItem="kRx-qI-x4H" firstAttribute="height" secondItem="oQh-fZ-WPn" secondAttribute="height" multiplier="0.6" id="En0-B3-WTi"/>
                                         <constraint firstItem="GzO-Kk-IkL" firstAttribute="leading" secondItem="1xb-BX-fMY" secondAttribute="trailing" id="Lve-gO-3Fc"/>
                                         <constraint firstItem="GzO-Kk-IkL" firstAttribute="top" secondItem="kRx-qI-x4H" secondAttribute="bottom" id="WIw-eM-Nl4"/>
-                                        <constraint firstItem="1xb-BX-fMY" firstAttribute="width" secondItem="oQh-fZ-WPn" secondAttribute="width" multiplier="0.3" id="aG7-xI-sol"/>
                                         <constraint firstAttribute="bottom" secondItem="GzO-Kk-IkL" secondAttribute="bottom" id="es6-io-oGz"/>
                                         <constraint firstItem="1xb-BX-fMY" firstAttribute="leading" secondItem="oQh-fZ-WPn" secondAttribute="leading" constant="2" id="jfv-z8-qeU"/>
                                         <constraint firstItem="kRx-qI-x4H" firstAttribute="leading" secondItem="1xb-BX-fMY" secondAttribute="trailing" id="szh-cx-4f3"/>

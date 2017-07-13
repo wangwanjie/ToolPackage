@@ -12,7 +12,11 @@ import RxCocoa
 import Alamofire
 import HandyJSON
 import SwiftyJSON
-import Kingfisher
+import PullToRefreshKit
+
+enum LoadNewsError: Error {
+    case refreshError
+}
 
 class NewsTableViewController: UITableViewController {
 
@@ -21,14 +25,27 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "新闻"
+
+        let curveHeader = CurveRefreshHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 0))
+        _ = self.tableView.setUpHeaderRefresh(curveHeader) { [weak self] in
+            if let strongSelf = self {
+                strongSelf.fetchNews()
+            }
+        }
+        self.tableView.beginHeaderRefreshing()
+    }
+
+    fileprivate func fetchNews() {
         let newsUrl = Constants.News.url + "?type=guoji&key=" + Constants.News.key
-         Alamofire.request(newsUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (response) in
+        Alamofire.request(newsUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseString { (response) in
             if response.result.isSuccess {
                 if let jsonString = response.result.value {
                     let newsEntity = JSONDeserializer<NewsEntity>.deserializeFrom(json: jsonString)
                     if let errorCode = newsEntity?.errorCode, errorCode == 0 {
                         self.dataSources = (newsEntity?.result?.data)!
                         self.tableView.reloadData()
+                        self.tableView.endHeaderRefreshing()
                     } else {
                         return
                     }
@@ -104,17 +121,9 @@ extension NewsTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         let cell = NewsTableViewCell.cellWithTableView(tableView)
-
         let newsModel = dataSources?[indexPath.row]
-
         cell.newsModel = newsModel
-
-//        cell.textLabel?.text = data?.title
-//        cell.detailTextLabel?.text = (data?.authorName)! + "-" + (data?.category)!
-//        cell.imageView?.kf.setImage(with: URL(string: (data?.thumbnailPicS)!), placeholder: UIImage(named: "placeholder"), options: [.forceRefresh, .forceTransition], progressBlock: nil, completionHandler: nil)
-
         return cell
     }
 }

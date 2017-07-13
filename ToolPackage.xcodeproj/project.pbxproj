@@ -24,6 +24,7 @@
 		0E874EED1F15DA0A008BAE53 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E874EEA1F15DA0A008BAE53 /* NewsEntity.swift */; };
 		0E874EF11F171A4C008BAE53 /* TSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E874EF01F171A4C008BAE53 /* TSWebViewController.swift */; };
 		0E874EF31F173730008BAE53 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E874EF21F173730008BAE53 /* NewsTableViewCell.swift */; };
+		0E874EF61F17618A008BAE53 /* CurveRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E874EF51F17618A008BAE53 /* CurveRefreshHeader.swift */; };
 		2A6F7AD1C4551258CA8C4306 /* Pods_ToolPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9FC4786944EA71CEF0D384 /* Pods_ToolPackage.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		0E874EEA1F15DA0A008BAE53 /* NewsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		0E874EF01F171A4C008BAE53 /* TSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWebViewController.swift; sourceTree = "<group>"; };
 		0E874EF21F173730008BAE53 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		0E874EF51F17618A008BAE53 /* CurveRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveRefreshHeader.swift; sourceTree = "<group>"; };
 		1D9FC4786944EA71CEF0D384 /* Pods_ToolPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToolPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590576489C820E7485EF837A /* Pods-ToolPackage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToolPackage.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToolPackage/Pods-ToolPackage.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 		0E874EE61F15D0EB008BAE53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E874EF51F17618A008BAE53 /* CurveRefreshHeader.swift */,
 				0E874EF21F173730008BAE53 /* NewsTableViewCell.swift */,
 			);
 			path = View;
@@ -350,6 +353,7 @@
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -361,6 +365,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -398,6 +403,7 @@
 			files = (
 				0E874ED31F14CF91008BAE53 /* MainCollectionViewCell.swift in Sources */,
 				0E874ECB1F14CF91008BAE53 /* LobbyViewController.swift in Sources */,
+				0E874EF61F17618A008BAE53 /* CurveRefreshHeader.swift in Sources */,
 				0E874EF31F173730008BAE53 /* NewsTableViewCell.swift in Sources */,
 				0E874ED01F14CF91008BAE53 /* LobbyItemBase.swift in Sources */,
 				0E874EC71F14CF91008BAE53 /* AppDelegate.swift in Sources */,

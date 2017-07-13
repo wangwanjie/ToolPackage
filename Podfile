@@ -14,6 +14,9 @@ target 'ToolPackage' do
   pod 'EZSwiftExtensions' #Stable release for Swift 3.0
   pod 'HandyJSON'
   pod 'Kingfisher', '~> 3.10.3'
+  pod "PullToRefreshKit"
+    #  pod 'PullToRefresher', '~> 2.0'
+    #  pod 'DGElasticPullToRefresh'
     #  pod 'RainbowSwift', '~> 2.0'
     #  pod 'SQLite.swift', '~> 0.11.3'
     #  pod 'CleanroomLogger', '~> 5.1.1'

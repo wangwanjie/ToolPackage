@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsTableViewCell: UITableViewCell {
 
     var newsModel: NewsEntityData! {
         willSet {
-            newsImageView.image = UIImage(named: newValue.thumbnailPicS!)
+            newsImageView.kf.setImage(with: URL(string: (newValue?.thumbnailPicS)!), placeholder: UIImage(named: "placeholder"), options: [.cacheOriginalImage], progressBlock: nil, completionHandler: nil)
             titleLabel.text = newValue.title
-            infoLabel.text = newValue.authorName! + "-" + newValue.category!
+            infoLabel.text = newValue.authorName! + " - " + newValue.category!
 
             self.newsModel = newValue
         }
@@ -43,7 +44,7 @@ class NewsTableViewCell: UITableViewCell {
         let reuseId = "TableViewCell"
 
         var cell = tableView.dequeueReusableCell(withIdentifier: reuseId)
-        if cell != nil {
+        if cell == nil {
             cell = NewsTableViewCell(style: .subtitle, reuseIdentifier: reuseId)
         }
         return cell as! NewsTableViewCell

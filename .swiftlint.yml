@@ -1,0 +1,12 @@
+disabled_rules:
+  - line_length
+  - force_cast
+excluded: # 你所希望不要检索的路径,SwiftLint会无视掉该路径下的文件
+  - Pods
+  - Carthage
+identifier_name:
+  min_length:
+    error: 1
+    warning: 1
+force_cast: [warning] # 当出现强制类型转换的时候是提示Error还是Warning
+reporter: "xcode" 
